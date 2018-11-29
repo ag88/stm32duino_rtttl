@@ -15,9 +15,10 @@ The beeper/speaker pin used in the code is PB7.
 This pin needs to be a Timer/PWM pin.  
 STM32F103 pins can only drive 20ma max (based on specs) hence one should use a transistor (e.g. in a [emitter follower](https://en.wikipedia.org/wiki/Common_collector)) setup to drive the beeper / speaker.
 Beepers / speakers commonly draw much more currents than 20ma. e.g.  
-![schematic](speaker_transistor.svg "speaker and transistor")
-
-
+![schematic](speaker_transistor.svg "speaker and transistor")  
+Note that this circuit could potentially be a *short* across the speaker if the MCU pin is *on*, hence if you are using a low resistance speaker
+you may like to put a series resistor in series with the speaker (it may reduce the volume).
+If the MCU drives the pin *low* most of the time as intended and never hold it high, that's possibly safe but no guarantees.  
 In addition, don't get a 'active' buzzer/beeper that beeps at a *fixed* frequency, you would only hear a single (mono)tone if you are lucky with that. Actual speakers, and 'passive' beepers and piezos likely works.
 
 It uses LED_BUILTIN macro for the board led pin
