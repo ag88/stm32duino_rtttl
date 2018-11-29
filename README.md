@@ -14,7 +14,11 @@ It uses the tone() function to drive the beeper/speaker hence to port this to ot
 The beeper/speaker pin used in the code is PB7.  
 This pin needs to be a Timer/PWM pin.  
 STM32F103 pins can only drive 20ma max (based on specs) hence one should use a transistor (e.g. in a [emitter follower](https://en.wikipedia.org/wiki/Common_collector)) setup to drive the beeper / speaker.  
-Beepers / speakers commonly draw much more currents than 20ma. In addition, don't get a 'active' buzzer/beeper that beeps at a *fixed* frequency, you would only hear a single (mono)tone if you are lucky with that. Actual speakers, and 'passive' beepers and piezos likely works.
+Beepers / speakers commonly draw much more currents than 20ma. e.g.
+![schematic](speaker_transistor.svg "speaker and transistor")
+
+
+In addition, don't get a 'active' buzzer/beeper that beeps at a *fixed* frequency, you would only hear a single (mono)tone if you are lucky with that. Actual speakers, and 'passive' beepers and piezos likely works.
 
 It uses LED_BUILTIN macro for the board led pin
 
