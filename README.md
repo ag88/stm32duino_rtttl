@@ -1,7 +1,7 @@
 # RTTTL player for stm32duino 
 This is a [RTTTL](https://en.wikipedia.org/wiki/Ring_Tone_Transfer_Language) player for stm32duino [*libmaple*](https://github.com/rogerclarkmelbourne/Arduino_STM32) core.
 
-This implemention is targeted on the [maple mini](https://www.leaflabs.com/maple/) STG32F103CB (and [compatibles](https://www.ebay.com/sch/i.html?_from=R40&_nkw=maple+mini&_sacat=0)) board
+This implemention is targeted on the [maple mini](https://www.leaflabs.com/maple/) STM32F103CB (and [compatibles](https://www.ebay.com/sch/i.html?_from=R40&_nkw=maple+mini&_sacat=0)) board
 
 ## Credits
 The RTTTL player implementation is from [arduino-rtttl-player](https://github.com/ponty/arduino-rtttl-player)
@@ -13,7 +13,7 @@ It uses the tone() function to drive the beeper/speaker hence to port this to ot
 
 The beeper/speaker pin used in the code is PB7.  
 This pin needs to be a Timer/PWM pin.  
-STM32F103 pins can only drive 20ma max (based on specs) hence one should use a transistor (e.g. in a [emitter follower](https://en.wikipedia.org/wiki/Common_collector) setup to drive the beeper / speaker.  
+STM32F103 pins can only drive 20ma max (based on specs) hence one should use a transistor (e.g. in a [emitter follower](https://en.wikipedia.org/wiki/Common_collector)) setup to drive the beeper / speaker.  
 Beepers / speakers commonly draw much more currents than 20ma. In addition, don't get a 'active' buzzer/beeper that beeps at a *fixed* frequency, you would only hear a single (mono)tone if you are lucky with that. Actual speakers, and 'passive' beepers and piezos likely works.
 
 It uses LED_BUILTIN macro for the board led pin
